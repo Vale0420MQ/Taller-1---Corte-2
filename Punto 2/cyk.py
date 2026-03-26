@@ -16,7 +16,7 @@ def cyk(grammar, string):
                     table[i][i].add(lhs)
 
     # Llenado de la tabla
-    for l in range(2, n + 1):  # longitud de subcadena
+    for l in range(2, n + 1):  
         for i in range(n - l + 1):
             j = i + l - 1
             for k in range(i, j):
@@ -42,7 +42,7 @@ grammar_cyk = {
 
 # PARSER DESCENDENTE SIMPLE (O(n))
 
-# Gramática tipo LL(1)
+# Gramática
 # S -> a S b | ε
 
 def parse_linear(s):
@@ -62,13 +62,11 @@ def parse_linear(s):
 
 # CADENAS
 
-
 def generate_string(n):
     return ''.join(random.choice(['a', 'b']) for _ in range(n))
 
 
 # COMPARACIÓN DE TIEMPOS
-
 
 def compare():
     sizes = [5, 10, 15, 20, 25]
